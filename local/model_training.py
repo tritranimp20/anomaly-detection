@@ -1,4 +1,4 @@
-# model_training.py
+# Model Training in local
 from sklearn.ensemble import IsolationForest, RandomForestClassifier
 from sklearn.svm import OneClassSVM
 import pandas as pd

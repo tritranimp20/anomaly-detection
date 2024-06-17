@@ -1,0 +1,8 @@
+# SageMaker Training Dockerfile
+FROM python:3.8-slim
+
+COPY cloud/model_training.py /app/train.py
+
+RUN pip install boto3 pandas scikit-learn joblib
+
+CMD ["python", "/app/train.py"]

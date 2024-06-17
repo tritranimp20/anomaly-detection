@@ -1,0 +1,8 @@
+# Data Ingestion Image
+FROM public.ecr.aws/lambda/python:3.8
+
+COPY cloud/data_ingestion.py ${LAMBDA_TASK_ROOT}
+
+RUN pip install boto3 pandas
+
+CMD [ "data_ingestion.lambda_handler" ]

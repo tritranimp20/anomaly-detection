@@ -1,0 +1,14 @@
+# Use an official Python runtime as a parent image
+FROM public.ecr.aws/lambda/python:3.8
+
+# Install necessary packages
+RUN pip install --no-cache-dir pandas \
+    scikit-learn \
+    joblib \
+    boto3
+
+# Copy the script into the container
+COPY cloud/preprocessing.py ${LAMBDA_TASK_ROOT}
+
+# Command to run the Lambda function handler
+CMD ["preprocessing.lambda_handler"]

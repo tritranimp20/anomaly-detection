@@ -1,10 +1,10 @@
 ## Generate Training and Testing Data
 
 ```shell
-# Training Data
+# Generate the Training Data
 python network_traffic_generator.py --output_file data/training_network_traffic_data.csv --output_labels_file data/training_labels.csv --num_normal_logs 100000 --num_abnormal_logs 10000 --num_high_frequency_logs 5000
 
-# Testing Data
+# Generate Testing Data
 python network_traffic_generator.py --output_file data/testing_network_traffic_data.csv --output_labels_file data/testing_labels.csv --num_normal_logs 2000 --num_abnormal_logs 200 --num_high_frequency_logs 50
 ```
 

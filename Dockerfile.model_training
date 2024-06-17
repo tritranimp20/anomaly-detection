@@ -1,0 +1,11 @@
+# Use an official Python runtime as a parent image
+FROM public.ecr.aws/lambda/python:3.8
+
+# Copy the rest of the working directory contents into the container
+COPY cloud/model_training.py ${LAMBDA_TASK_ROOT}
+
+# Install any needed packages explicitly
+RUN pip install --no-cache-dir boto3 pandas scikit-learn joblib
+
+# Command to run the Lambda function handler
+CMD ["model_training.lambda_handler"]
